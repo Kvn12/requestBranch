@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>O Pedido mais esperado!</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f5d1bf;
+            }
+
+            p {
+                font-style: normal;
+                position: absolute;
+                margin-top: -150px;
+            }
+
+            .box {
+                font-size: 80px;
+                color: white;
+                height: 792px;
+                width: 949px;
+                border-radius: 10px;
+                background: #e70e0e;
+                flex-direction: column;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+            }
+
+            .buttons-container {
+                display: flex;
+                justify-content: space-around;
+                height: 50px;
+                width: 150px;
+            }
+            button {
+                height: 60px;
+                width: 100px;
+                background: white;
+                border-radius: 5px;
+                color: black;
+                font-weight: 800;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <p>Vavazinho hj?</p
+            <div class="buttons-container">
+                <button id="yes">Sim</button>
+                <button id='no'>Não</button>
+            </div>    
+        </div>
+    </body>
+    <script>
+        let button = document.getElementById('no');
+
+        let box = document.querySelector('.box');
+        let boxRect = box.getBoundingClientRect();
+
+        let height = boxRect.height - 100;
+        let width = boxRect.width - 100;
+
+        button.addEventListener('mouseover', function (){
+            button.style.position = "absolute";
+            button.style.top = Math.random() * height + "px";
+            button.style.left = Math.random() * width + "px";
+        })
+
+        let buttonYes = document.getElementById('yes');
+
+        buttonYes.addEventListener('click', function () {
+            alert('Ótimo! Entro as 20h.');
+        });
+    </script>
+</html>
+
+
